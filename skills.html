@@ -1,246 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My Skills</title>
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55); 
-      margin: 0;
-      padding: 0;
-      color: white;
-    }
-
-    .header{
-    background-color: #3dc19c;
-    padding: 15px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <title>My Skills</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #141e30, #243b55);
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      .header {
+        background-color: #3dc19c;
+        padding: 15px;
+      
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 25px;
+        font-size: 23px;
+        transition: color 0.3s ease;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        left: 0;
+        bottom: -5px;
+        background: #ff0055;
+        transition: width 0.4s ease, background 0.4s ease;
+      }
+      .nav-links a:hover {
+        color: #fc0505;
+        transform: scale(1.1) rotate(-1deg);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+        background: #c09018;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #fff;
+        font-size: 36px;
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-bottom: 100px;
+      }
+
+      .skill-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        text-align: center;
+        padding: 25px;
+        backdrop-filter: blur(6px);
+        transition: transform 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: scale(1.05);
+      }
+
+      .skill-card img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
+
+      .skill-card h3 {
+        margin: 10px 0 5px;
+        color: #f1f1f1;
+      }
+
+      .skill-card p {
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        margin-top: 15px;
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .social-icons a {
+        margin: 0 10px;
+        display: inline-block;
+      }
+
+      .social-icons img {
+        width: 30px;
+        height: 30px;
+        transition: filter 0.3s ease;
+        cursor: pointer;
+      }
+
+      .social-icons img:hover {
+        filter: brightness(0.8);
+      }
+
+      .social-icons img:active {
+        filter: invert(1);
+      }
+      .footer {
+        padding: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        justify-items: center;
+        text-align: center;
+        background: #222;
+        color: white;
+      }
+
+    @media (max-width:768px){
+
+nav {
+  flex-direction: column;
+ 
 
 }
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav-links a{
+  font-size: 14px;
+  margin-left: 0px;
+  margin: 8px;
+}
 
-}
-.logo
-{
-      color: #fff;
-      font-size: 30px;
-      font-weight: bold;
-}
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 25px;
-  font-size: 23px;
-  transition: color 0.3s ease;
-  position: relative;
-  transition: color 0.3s ease-in-out;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background: #ff0055;
-  transition: width 0.4s ease, background 0.4s ease;
-}
-.nav-links a:hover {
-  color: #fc0505;
-  transform: scale(1.1) rotate(-1deg);
-}
-.nav-links a:hover::after {
-  width: 100%;
-  background: #c09018;
-}
-    
-
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #fff;
-      font-size: 36px;
-    }
 
     .skills-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-      padding-bottom: 100px;
-    }
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 300px;
+      
+      }
 
-    .skill-card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      text-align: center;
-      padding: 25px;
-      backdrop-filter: blur(6px);
-      transition: transform 0.3s ease;
-    }
-
-    .skill-card:hover {
-      transform: scale(1.05);
-    }
-
-    .skill-card img {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      margin-bottom: 15px;
-    }
-
-    .skill-card h3 {
-      margin: 10px 0 5px;
-      color: #f1f1f1;
-    }
-
-    .skill-card p {
-      color: #ccc;
-      font-size: 14px;
-    }
-
-   
 .social-icons {
-  margin-top: 15px;
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  margin-top: 10px;
+  
+  gap:0;
+  
 }
-
-.social-icons a {
-  margin: 0 10px;
-  display: inline-block;
+.footer{
+  flex-direction: column;
 }
 
 .social-icons img {
-  width: 30px;
-  height: 30px;
-  transition: filter 0.3s ease;
-  cursor: pointer;
+  width: 25px;
+  height: 25px;
 }
 
-.social-icons img:hover {
-  filter: brightness(0.8);
 }
 
-.social-icons img:active {
-  filter: invert(1);
-}
-.footer {
-  padding: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  justify-items: center;
-  text-align: center;
-  background: #222;
-  color: white;
-}
-  
-  </style>
-</head>
-<body>
 
-
-     <header class="header">
-     <nav>
-        <div class="logo"><img src="mybrand-removebg-preview.png"  height="50" width="50"></div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="skills.html">Skills</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+    </style>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="logo">
+          <img src="mybrand-removebg-preview.png" height="50" width="50" />
         </div>
-     </nav>
-</header>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
 
-  <h1>My Skills</h1>
+    <h1>My Skills</h1>
 
-  <div class="skills-container">
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="HTML">
-      <h3>HTML</h3>
-      <p>Structuring web content</p>
+    <div class="skills-container">
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/919/919827.png"
+          alt="HTML"
+        />
+        <h3>HTML</h3>
+        <p>Structuring web content</p>
+      </div>
+
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/919/919826.png"
+          alt="CSS"
+        />
+        <h3>CSS</h3>
+        <p>Styling beautiful pages</p>
+      </div>
+
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/919/919828.png"
+          alt="JavaScript"
+        />
+        <h3>JavaScript</h3>
+        <p>Interactive web development</p>
+      </div>
+
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+          alt="Java"
+        />
+        <h3>Java</h3>
+        <p>Backend and OOP skills</p>
+      </div>
+
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
+          alt="C Language"
+        />
+        <h3>C Language</h3>
+        <p>Procedural programming</p>
+      </div>
+
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png"
+          alt="GitHub"
+        />
+        <h3>GitHub</h3>
+        <p>Version control & collaboration</p>
+      </div>
+
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          alt="Network Security"
+        />
+        <h3>Network Security</h3>
+        <p>Protecting systems from threats</p>
+      </div>
+
+      <div class="skill-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1006/1006365.png"
+          alt="Ethical Hacking"
+        />
+        <h3>Ethical Hacking</h3>
+        <p>Identifying system vulnerabilities</p>
+      </div>
     </div>
 
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="CSS">
-      <h3>CSS</h3>
-      <p>Styling beautiful pages</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919828.png" alt="JavaScript">
-      <h3>JavaScript</h3>
-      <p>Interactive web development</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919852.png" alt="Java">
-      <h3>Java</h3>
-      <p>Backend and OOP skills</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C Language">
-      <h3>C Language</h3>
-      <p>Procedural programming</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub">
-      <h3>GitHub</h3>
-      <p>Version control & collaboration</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Network Security">
-      <h3>Network Security</h3>
-      <p>Protecting systems from threats</p>
-    </div>
-
-    <div class="skill-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1006/1006365.png" alt="Ethical Hacking">
-      <h3>Ethical Hacking</h3>
-      <p>Identifying system vulnerabilities</p>
-    </div>
-  </div>
-
-
-
-       <footer>
-    <div class="footer">
-         <p>© 2025 Jayakrishna | All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://github.com/sasupallijayakrishna1" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-      </a>
-      <a href="https://www.linkedin.com/in/sasupalli-jayakrishna/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
-      </a>
-      <a href="https://www.instagram.com/jayakrishna_143/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-      </a>
-      <a href="https://x.com/Jayakrishna_3" target="_blank">
-        <img src="X.png" alt="Twitter X" width="32" >
-       </a>
-      <a href="https://facebook.com/yourusername" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-      </a>
-    </div>
-    </div> 
-  </footer>
-
-
-</body>
+    <footer>
+      <div class="footer">
+        <p>© 2025 Jayakrishna | All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://github.com/sasupallijayakrishna1" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+              alt="GitHub"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sasupalli-jayakrishna/"
+            target="_blank"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733561.png"
+              alt="LinkedIn"
+            />
+          </a>
+          <a href="https://www.instagram.com/jayakrishna_143/" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+              alt="Instagram"
+            />
+          </a>
+          <a href="https://x.com/Jayakrishna_3" target="_blank">
+            <img src="X.png" alt="Twitter X" width="32" />
+          </a>
+          <a href="https://facebook.com/yourusername" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              alt="Facebook"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

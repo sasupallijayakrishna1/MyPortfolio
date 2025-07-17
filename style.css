@@ -1,11 +1,14 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .header {
   background-color: #3dc19c;
   padding: 15px;
+  position: sticky;
+  top: 0;
 }
 nav {
   display: flex;
@@ -102,4 +105,48 @@ nav {
   text-align: center;
   background: #222;
   color: white;
+}
+
+@media (max-width:768px){
+
+nav {
+  flex-direction: column;
+ 
+
+
+}
+.nav-links a{
+  font-size: 14px;
+  margin-left: 0px;
+  margin: 8px;
+}
+
+.hero h1 {
+  font-size: 30px;
+}
+
+.hero p {
+  font-size: 20px;
+  
+ 
+}
+
+.hero {
+ background-position: center;
+}
+
+.social-icons {
+  
+  gap:0;
+  
+}
+.footer{
+  flex-direction: column;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+}
+
 }

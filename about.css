@@ -129,6 +129,59 @@ nav{
   color: white;
 }
 
+@media (max-width:768px){
+
+nav {
+  flex-direction: column;
+ 
+
+
+}
+.nav-links a{
+  font-size: 14px;
+  margin-left: 0px;
+  margin: 8px;
+}
+
+.about-container {
+  
+  border: 20px #243b55 solid;
+  
+}
+
+.about-image img {
+  margin-right: 0px;
+  width: 200px;
+  height: 200px;
+  
+}
+
+.about-text p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.about-text h1 {
+  font-size: 2.2em;
+ 
+}
+
+.social-icons {
+  
+  gap:0;
+  
+}
+.footer{
+  flex-direction: column;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+}
+
+
+}
 
 
 
